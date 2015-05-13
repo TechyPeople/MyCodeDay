@@ -1,0 +1,157 @@
+body.tools
+    .events-selector
+        &:after
+            content: ""
+            display: block
+            clear: both
+            width: 0
+            height: 0
+        ul
+            padding: 0
+            width: 25%
+            float: left
+            li
+                list-style-type: none
+            
+    .directory
+        border-collapse: collapse
+        td, th
+            padding-right: 0.75rem
+            padding-bottom: 0.25rem
+        .event td, .event th
+            padding-top: 1rem
+
+
+    .tasks
+        tr
+            height: 2.5rem
+            td.step
+                padding-right: 1rem
+                &.done span span
+                    background-color: $color-green
+                & > span
+                    display: block
+                    border: 1px solid $foreground-color-light
+                    padding: 1px
+                    margin-bottom: 0.125rem
+                    & > span
+                        display: block
+                        background-color: $color-red
+                        width: 0.5rem
+                        height: 0.5rem
+
+    .checkin
+        .type-teacher
+            color: $color-blue
+            font-weight: bold
+
+        .type-volunteer
+            color: $color-green
+            font-weight: bold
+
+        .type-sponsor
+            color: $color-red
+            font-weight: bold
+
+    .event-tidbits
+        display: block
+        padding: 1rem
+        border: 1px solid $foreground-color-light
+        text-decoration: none
+        border-radius: 4px
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05)
+        margin-bottom: 1rem
+        header
+            display: block
+            margin-bottom: 1rem
+            h3
+                font-size: 2rem
+                margin: 0
+            p
+                font-size: 0.8rem
+                color: $foreground-color-light
+
+        h3
+            text-transform: uppercase
+            color: $foreground-color-light
+            margin-top: 0 !important
+            font-size: 1rem
+
+        .venue
+            .map
+                display: inline-block
+                width: 60%
+                height: 300px
+
+            .info
+                display: inline-block
+                width: 39%
+                vertical-align: top
+                text-align: center
+
+                div.contact
+                    margin-top: 1rem
+
+                span
+                    display: block
+
+        .sponsors p
+            font-size: 0.8rem
+            color: $foreground-color-light
+
+        & > section
+            clear: both
+            padding: 1rem 0
+            border-top: 1px solid $foreground-color-lighter
+            &.blurb
+                font-size: 1.7rem
+
+    .status
+        border-collapse: collapse
+        thead
+            th
+                font-size: 0.75rem
+                font-family: monospace
+        tbody
+            tr
+                &:nth-child(2n+1)
+                    background-color: $foreground-color-lighter
+                td
+                    border-left: 1px solid $foreground-color-light
+                    padding: 0.5rem
+                    &.okay span span
+                        background-color: $color-green
+                    & > span
+                        display: inline-block
+                        border: 1px solid $foreground-color-light
+                        padding: 1px
+                        margin-bottom: 0.125rem
+                        & > span
+                            display: block
+                            background-color: $color-red
+                            width: 0.5rem
+                            height: 0.5rem
+
+    .banlist
+        width: 100%
+        tr
+            &.expired
+                color: $foreground-color-light
+            &.info
+                &:not(:first-child)
+                    td, th
+                        padding-top: 2rem
+                        border-top: 1px solid $foreground-color-light
+                td, th
+                    padding-bottom: 1rem
+                    text-align: left
+                    &.enforcement
+                        width: 100%
+                    &.actions
+                        width: 10%
+                    .name, .email
+                        display: block
+                        margin-right: 1rem
+            &.details
+                td
+                    padding-bottom: 2rem
