@@ -10,13 +10,13 @@
     <meta name="author" content="Sanil Chawla" />
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link rel="stylesheet" type="text/css" href="selectevent.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="container">
             <h1>Welcome to MyCodeDay</h1>
-
             <form class="form" action="index.php" method="get">
                 <input type="text" placeholder="Type your event ID..." name="selectedEvent">
                 <button type="submit" id="login-button">Enter</button>
@@ -24,7 +24,7 @@
         </div>
         <script type="text/javascript">
             $("#login-button").click(function (event) {
-                event.preventDefault();
+//                event.preventDefault();
 
                 $('form').fadeOut(500);
                 $('.wrapper').addClass('form-success');
