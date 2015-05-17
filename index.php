@@ -10,11 +10,11 @@
     include('eventscraper.php');
     
     if(!isset($selectedEvent)) {
-        header('Location: selectevent.php');
+        header('Location: select/event.php');
     }
     
     if(!isset($userEvent)) {
-        header('Location: selectevent.php');
+        header('Location: select/event.php');
     }
 ?>
 
