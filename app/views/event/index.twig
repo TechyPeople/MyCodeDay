@@ -1,0 +1,200 @@
+{% extends "template.twig" %}
+{% block title %}{{ event.full_name }}{% endblock %}
+{% block section %}event{% endblock %}
+{% block subnav %}{% include "event/subnav.twig" %}{% endblock %}
+{% block content %}
+    {% if event.allow_registrations_calculated %}
+        <div id="registrations-over-time" style="width:100%"></div>
+    {% endif %}
+
+    <section class="status">
+        <section class="hud">
+            <ul>
+                <li>
+                    <span class="label">Venue</span>
+                    {% if event.venue %}
+                        <span class="status success">&#10003;</span>
+                    {% else %}
+                        <span class="status failure">&#10007;</span>
+                    {% endif %}
+                </li>
+                <li>
+                    <span class="label">Ship Info</span>
+                    {% if event.ship_address_1 %}
+                        <span class="status success">&#10003;</span>
+                    {% else %}
+                        <span class="status failure">&#10007;</span>
+                    {% endif %}
+                </li>
+                <li>
+                    <span class="label">Sponsors</span>
+                    <span class="value">{{ event.sponsors|length }}</span>
+                </li>
+                <li>
+                    <span class="label">Attendees</span>
+                    <span class="value">{{ event.registrations|length }}</span>
+                </li>
+                <li>
+                    <span class="label">Revenue</span>
+                    <span class="value">${{ event.revenue|number_format(2) }}</span>
+                </li>
+            </ul>
+        </section>
+        <section class="toggles">
+            <form method="post" action="/event/{{ event.id }}/update-registration-status">
+                <div class="switch enableddisabled">
+                    <input type="checkbox" name="allow_registrations" id="allow_registrations" value="1"
+                           {% if event.allow_registrations %}checked{% endif %}
+                           {% if not event.venue %}disabled{% endif %} />
+                    <label for="allow_registrations">
+                        <span class="inner"></span>
+                        <span class="switch">&#10005;</span>
+                    </label>
+                    <span class="label
+                        {% if event.allow_registrations %}on{% endif %}
+                        ">Event</span>
+                </div>
+            {{ csrf|raw }}</form>
+
+            <form method="post" action="/event/{{ event.id }}/update-waitlist-status">
+                <div class="switch openclosed">
+                    <input type="checkbox" name="allow_waitlist_signups" id="allow_waitlist_signups" value="1"
+                           {% if event.allow_waitlist_signups and event.allow_registrations_calculated %}checked{% endif %}
+                           {% if not event.allow_registrations_calculated %}disabled{% endif %} />
+                    <label for="allow_waitlist_signups">
+                        <span class="inner"></span>
+                        <span class="switch">&#10005;</span>
+                    </label>
+                    <span class="label
+                        {% if event.allow_waitlist_signups and event.allow_registrations_calculated %}on{% endif %}"
+                        >Waitlist</span>
+                </div>
+            {{ csrf|raw }}</form>
+        </section>
+    </section>
+
+    <form action="/event/{{ event.id }}/notes" method="post" class="notes">
+        <h3>Notes</h3>
+        <div class="field">
+            <label for="notes">Notes</label>
+            <textarea name="notes" class="markdown">{{ event.notes }}</textarea>
+            <span class="help">(For your internal use. Will be shown in the <a href="/event/{{ event.id }}/overview">print-friendly overview</a>.)</span>
+        </div>
+        <input type="submit" value="Save"/>
+
+        <h3>Public Notes</h3>
+        <div class="field">
+            <label for="public_notes">Public Notes</label>
+            <textarea name="public_notes" class="markdown">{{ event.public_notes }}</textarea>
+            <span class="help">(This field will be <a href="/tools/tidbits/{{ event.region.id }}">shared with future RMs</a> in this region.)</span>
+        </div>
+        <input type="submit" value="Save"/>
+    {{ csrf|raw }}</form>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript">
+        $('#allow_registrations, #allow_waitlist_signups').on('change', function() {
+            $(this).parents('form').submit();
+        });
+    </script>
+    <style type="text/css">
+        #registrations-over-time .axis path,
+        #registrations-over-time .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        #registrations-over-time .line {
+            fill: none;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        #registrations-over-time rect {
+            fill: #ccc;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script type="text/javascript">
+
+        var elem = $('#registrations-over-time');
+
+        var margin = {top: 20, right: 20, bottom: 30, left: 50},
+                width = elem.width() - margin.left - margin.right,
+                height = (elem.width() * 0.4) - margin.top - margin.bottom;
+
+        var parseDate = d3.time.format("%d-%b-%y").parse;
+
+        var x = d3.time.scale()
+                .range([0, width]);
+
+        var y = d3.scale.linear()
+                .range([height, 0]);
+
+        var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+                .scale(y)
+                .orient("left");
+
+        var line = d3.svg.line()
+                .x(function(d) { return x(d.date); })
+                .y(function(d) { return y(d.registrations); });
+
+        var svg = d3.select("#registrations-over-time").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.csv("/event/{{ event.id }}/chartdata.csv", function(error, data) {
+            data.forEach(function(d) {
+                d.date = parseDate(d.date);
+                d.delta = +d.delta;
+                d.registrations = +d.registrations;
+            });
+
+            x.domain([
+                d3.min(data, function(d) { return d.date; }),
+                parseDate('{{ event.starts_at|date('j-M-y')|escape('js') }}')
+            ]);
+            y.domain([0, Math.max({{ event.max_registrations|escape('js') }}, d3.max(data, function(d) { return d.registrations; }))]);
+
+            var width = x(data[1].date) - x(data[0].date);
+
+            svg.selectAll('rect')
+                    .data(data)
+                    .enter()
+                    .append('rect')
+                    .attr('x', function(d) { return x(d.date) - width; })
+                    .attr('y', function(d) { return y(d.delta); })
+                    .attr("width", width)
+                    .attr("height", function(d) { return height - y(d.delta); });
+
+            svg.append("path")
+                    .datum(data)
+                    .attr("class", "line")
+                    .attr("d", line);
+
+
+            svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(xAxis);
+
+            svg.append("g")
+                    .attr("class", "y axis")
+                    .call(yAxis)
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("Registrations");
+        });
+
+    </script>
+{% endblock %}

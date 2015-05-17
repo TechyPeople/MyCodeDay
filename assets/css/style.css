@@ -7,6 +7,10 @@ body > div.wrap {
     padding: 1.75rem 0;
 }
 
+ultralight {
+    font-weight: 100;
+}
+
 body > div.wrap > section.content.with-subnav {
     width: 80%;
     float: right;
@@ -760,7 +764,7 @@ body.event .content > .status:after {
 }
 
 body.event .content > .status .hud {
-    width: 30%;
+    width: 100%;
     float: left;
 }
 

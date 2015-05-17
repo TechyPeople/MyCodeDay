@@ -1,110 +1,32 @@
+<?php
+    $myEvent = $_REQUEST["selectedEvent"];
+    include('simple_html_dom.php');
+    include('events.php');
+    if($userEvent['current_event']['overflow_event'] != null && $userEvent['current_event']['webname'] != $myEvent) {
+        $selectedEvent = $userEvent['current_event']['overflow_event'];
+    } else {
+        $selectedEvent = $userEvent;
+    }
+    include('eventscraper.php');
+    
+    if(!isset($selectedEvent)) {
+        header('Location: selectevent.php');
+    }
+    
+    if(!isset($userEvent)) {
+        header('Location: selectevent.php');
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>CodeDay [name] // MyCodeDay</title>
+    <title>MyCodeDay <?php echo($selectedEvent['name']) ?></title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/sweet-alert.css" />
     <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png" />
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVggXa9btjGmzqgUim-1HjmnMtbF3UNms&sensor=false&libraries=visualization,places"></script>
-    <script type="text/javascript">
-        (function () {
-            var simpleMapStyle = [
-                {
-                    "featureType": "landscape",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                }, {
-                    "featureType": "administrative",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                }, {
-                    "featureType": "administrative.country",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                }, {
-                    "featureType": "administrative.province",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                }, {
-                    "featureType": "administrative.province",
-                    "elementType": "labels",
-                    "stylers": [
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                }, {
-                    "featureType": "road",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                }, {
-                    "featureType": "transit",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                }, {
-                    "featureType": "poi",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "geometry",
-                    "stylers": [
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 100
-                        },
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                }, {
-                    "featureType": "water",
-                    "stylers": [
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 27
-                        }
-                    ]
-                }
-            ];
-            window.defaultMapOptions = {
-                center: new google.maps.LatLng(38.216194740798436, -95.59806542968748),
-                zoom: 4,
-                disableDefaultUI: true,
-                styles: simpleMapStyle,
-                scrollwheel: false,
-                draggable: false
-            }
-        })();
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
@@ -129,7 +51,7 @@
         <section class="user">
             <ul>
                 <li class="username">[s5 username]</li>
-                <li class="batch"><a href="/change-event">CodeDay [event]</a>
+                <li class="batch"><a href="http://codeday.org/sv">CodeDay <?php echo($selectedEvent['current_event']['region_name']) ?></a>
                 </li>
                 <li class="logout"><a href="/logout">Logout</a>
                 </li>
@@ -139,7 +61,7 @@
 
     <div class="wrap">
         <section class="subnav">
-            <h2>MyCodeDay [event name]</h2>
+            <h2>MyCodeDay<br/><ultralight><?php echo($selectedEvent['current_event']['region_name']) ?></ultralight></h2>
 
             <section class="general">
                 <ul>
@@ -186,8 +108,12 @@
                 <section class="hud">
                     <ul>
                         <li>
+                            <span class="label">Event</span>
+                            <span class="value"><?php echo($selectedEvent['current_event']['region_name']) ?></span>
+                        </li>
+                        <li>
                             <span class="label">Venue</span>
-                            <span class="value">[venue name]</span>
+                            <span class="value"><?php echo($eventVenue) ?></span>
                         </li>
                         <li>
                             <span class="label">Date</span>
@@ -195,11 +121,7 @@
                         </li>
                         <li>
                             <span class="label">Attendees</span>
-                            <span class="value">83</span>
-                        </li>
-                        <li>
-                            <span class="label">Staff</span>
-                            <span class="value">[# of subusers]</span>
+                            <span class="value"><?php echo($selectedEvent['current_event']['registration_info']['max'] - $selectedEvent['current_event']['registration_info']['remaining']) ?></span>
                         </li>
                     </ul>
                 </section>
@@ -237,7 +159,7 @@
     </div>
 
     <footer>
-        Copyright &copy; 2015 Sanil Chawla.
+        Copyright &copy; 2015 Sanil Chawla.<?php echo(' // If you see this, PHP is working.') ?>
     </footer>
     <script type="text/javascript" src="assets/js/sweet-alert.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
@@ -265,109 +187,9 @@
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
-    <script type="text/javascript">
-        var elem = $('#registrations-over-time');
-
-        var margin = {
-                top: 20,
-                right: 20,
-                bottom: 30,
-                left: 50
-            },
-            width = elem.width() - margin.left - margin.right,
-            height = (elem.width() * 0.4) - margin.top - margin.bottom;
-
-        var parseDate = d3.time.format("%d-%b-%y").parse;
-
-        var x = d3.time.scale()
-            .range([0, width]);
-
-        var y = d3.scale.linear()
-            .range([height, 0]);
-
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
-
-        var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient("left");
-
-        var line = d3.svg.line()
-            .x(function (d) {
-                return x(d.date);
-            })
-            .y(function (d) {
-                return y(d.registrations);
-            });
-
-        var svg = d3.select("#registrations-over-time").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        d3.csv("/event/Z3ftTdfVLFzi/chartdata.csv", function (error, data) {
-            data.forEach(function (d) {
-                d.date = parseDate(d.date);
-                d.delta = +d.delta;
-                d.registrations = +d.registrations;
-            });
-
-            x.domain([
-                d3.min(data, function (d) {
-                    return d.date;
-                }),
-                parseDate('23\x2DMay\x2D15')
-            ]);
-            y.domain([0, Math.max(120, d3.max(data, function (d) {
-                return d.registrations;
-            }))]);
-
-            var width = x(data[1].date) - x(data[0].date);
-
-            svg.selectAll('rect')
-                .data(data)
-                .enter()
-                .append('rect')
-                .attr('x', function (d) {
-                    return x(d.date) - width;
-                })
-                .attr('y', function (d) {
-                    return y(d.delta);
-                })
-                .attr("width", width)
-                .attr("height", function (d) {
-                    return height - y(d.delta);
-                });
-
-            svg.append("path")
-                .datum(data)
-                .attr("class", "line")
-                .attr("d", line);
-
-
-            svg.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
-
-            svg.append("g")
-                .attr("class", "y axis")
-                .call(yAxis)
-                .append("text")
-                .attr("transform", "rotate(-90)")
-                .attr("y", 6)
-                .attr("dy", ".71em")
-                .style("text-anchor", "end")
-                .text("Registrations");
-        });
-    </script>
-
-
     <link rel="stylesheet" href="assets/css/shepherd-theme-arrows.css" />
     <script src="assets/js/shepherd.min.js"></script>
     <script src="assets/js/tour.js"></script>
 </body>
 
-</html>
+

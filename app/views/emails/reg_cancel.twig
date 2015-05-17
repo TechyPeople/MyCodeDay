@@ -1,0 +1,10 @@
+Hey {{ registration.first_name }}!
+
+We've cancelled your CodeDay registration for {{ registration.event.name }}.
+{% if refund %}
+
+Your card was refunded in full. You should expect to see this amount credited back to your card in the next few days.
+{% endif %}
+
+If you have any questions, please reply to this email.
+The StudentRND Team

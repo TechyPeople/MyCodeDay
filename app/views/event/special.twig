@@ -1,0 +1,60 @@
+{% extends "template.twig" %}
+{% block title %}Special // {{ event.full_name }}{% endblock %}
+{% block section %}event{% endblock %}
+{% block subnav %}{% include "event/subnav.twig" %}{% endblock %}
+{% block content %}
+    <header>
+        <h2>Special Settings</h2>
+        <p>These settings are only available to admins, and satisfy special conditions.</p>
+    </header>
+    <form method="post">
+        <div class="field">
+            <label for="custom_css">Custom CSS</label>
+            <textarea name="custom_css" id="custom_css">{{ event.custom_css }}</textarea>
+            <span class="help">Custom CSS to be included on the event page.</span>
+        </div>
+
+        <div class="field">
+            <label for="hide_default_workshops">Hide Default Workshops?</label>
+            <input type="checkbox" name="hide_default_workshops" id="hide_default_workshops" value="1" {% if event.hide_default_workshops %}checked{% endif %} />
+            <span class="help">If checked, batch workshops will not show up in the event schedule, and must be added
+                manually in the activities section. Used for events with a special schedule.</span>
+        </div>
+
+        <div class="field">
+            <label for="notice">Notice</label>
+            <input type="text" id="notice" name="notice" value="{{ event.notice }}" />
+            <span class="help">Displayed on a banner at the top of the site.</span>
+        </div>
+
+        <div class="field">
+            <label for="name_override">Override Name</label>
+            <input type="text" id="name_override" name="name_override" value="{{ event.name_override }}" />
+            <span class="help">Changes the name shown on the site, while still keeping the same region.</span>
+        </div>
+
+        <div class="field">
+            <label for="abbr_override">Abbr Override</label>
+            <input type="text" id="abbr_override" name="abbr_override" value="{{ event.abbr_override }}" />
+            <span class="help">Changes the abbr shown on the site, while still keeping the same region.</span>
+        </div>
+
+        <div class="field">
+            <label for="webname_override">Webname Override</label>
+            <input type="text" id="webname_override" name="webname_override" value="{{ event.webname_override }}" />
+            <span class="help">Changes the webname used on the site, while still keeping the same region.</span>
+        </div>
+
+        <input type="submit" value="Save" />
+    {{ csrf|raw }}</form>
+
+    <header>
+        <h2>Related Event</h2>
+        <p>You can create a new event to handle multiple nearby events, such as for big regions.</p>
+    </header>
+    {% if event.overflow_events|length < 1 %}
+        <form action="/event/{{ event.id }}/special/overflow" method="post">
+            <input type="submit" value="Create Related Event"/>
+        {{ csrf|raw }}</form>
+    {% endif %}
+{% endblock %}

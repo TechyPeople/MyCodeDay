@@ -1,0 +1,45 @@
+{% extends "template.twig" %}
+{% block title %}Sponsors // {{ event.full_name }}{% endblock %}
+{% block section %}event{% endblock %}
+{% block subnav %}{% include "event/subnav.twig" %}{% endblock %}
+{% block content %}
+    <header>
+        <h2>Sponsors</h2>
+        <p>Sponsors are listed on the website.</p>
+    </header>
+    <ul class="sponsors">
+        {% for sponsor in event.sponsors %}
+            <li>
+                <a href="/event/{{ event.id }}/sponsors/{{ sponsor.id }}/edit">
+                    <header>
+                        <section class="info">
+                            <h3>{{ sponsor.name }}</h3>
+                            {% if sponsor.url %}
+                                <span class="url">{{ sponsor.url }}</span>
+                            {% endif %}
+                        </section>
+                        <section class="logo"
+                                style="background-image: url('/api/i/sponsor/{{ sponsor.id }}_512/{{ sponsor.updated_at.timestamp }}.jpg')"
+                            ></section>
+                    </header>
+                    {% if sponsor.blurb %}
+                        <section class="blurb">
+                            {{ sponsor.blurb }}
+                        </section>
+                    {% endif %}
+                    {% if sponsor.description %}
+                        <section class="description">
+                            {{ sponsor.description|nl2br }}
+                        </section>
+                    {% endif %}
+                    {% if sponsor.perk %}
+                        <section class="perk">
+                            {{ sponsor.perk|nl2br }}
+                        </section>
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+        <li class="add"><a href="/event/{{ event.id }}/sponsors/add">Add</a></li>
+    </ul>
+{% endblock %}

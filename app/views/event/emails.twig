@@ -1,0 +1,82 @@
+{% extends "template.twig" %}
+{% block title %}Emails // {{ event.full_name }}{% endblock %}
+{% block section %}event{% endblock %}
+{% import "widgets/compose_email.twig" as composer %}
+{% block subnav %}{% include "event/subnav.twig" %}{% endblock %}
+{% block content %}
+    <header>
+        <h2>Emails</h2>
+        <p>You can contact attendees, waitlisted registrants, and notify subscribers here.</p>
+        <p>Supports <a href="http://twig.sensiolabs.org/doc/templates.html#variables" target="_blank">Twig syntax</a>
+            &mdash; you can use
+            <a href="/docs/model/Registration" target="_blank">{{ '{{' }} registration }}</a>,
+            <a href="/docs/model/Event" target="_blank">{{ '{{' }} event }}</a>, and
+            <a href="/docs/model/User" target="_blank">{{ '{{' }} me }}</a> to personalize the email.</p>
+        <p>(If sending an email to the notification list, you can <strong>not</strong> use {{ '{{' }} registration }}.
+            Only emails are collected for notification list subscribers.)</p>
+    </header>
+
+    <form method="post" action="/event/{{ event.id }}/emails/send">
+        {{ composer.compose(event, _context) }}
+    {{ csrf|raw }}</form>
+
+    {% if me.is_admin %}
+    <form method="post" class="small dangerous" action="/event/{{ event.id }}/emails/delete">
+        <input type="submit" value="Truncate Recent Emails" />
+    {{ csrf|raw }}</form>
+    {% endif %}
+    <h3>Previously Sent Emails</h3>
+    <ul class="sent-emails">
+        {% for email in event.emails_sent|reverse %}
+            <li data-sentid="{{ email.id }}">
+                <span class="to">To: {{ email.to }}</span>
+                <span class="time">{{ email.created_at.diffForHumans }}</span>
+                <span class="subject">{{ email.subject }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <script type="text/javascript">
+        var emails_sent = {
+            {% for email in event.emails_sent %}
+                "{{ email.id|escape('js') }}": {
+                    "to": "{{ email.to|escape('js') }}",
+                    "from": "{{ email.from|escape('js') }}",
+                    "subject": "{{ email.subject|escape('js') }}",
+                    "message": "{{ email.message|escape('js') }}",
+                    "is_marketing": {% if email.is_marketing %}true{% else %}false{% endif %}
+                },
+            {% endfor %}
+        };
+
+        $(document).ready(function(){
+            $('.sent-emails li').on('click', function(){
+                var $this = $(this);
+                var email = emails_sent[$this.attr('data-sentid')];
+
+                if ($('#subject').val() !== '' || $('#subject').val() !== '') {
+                    if (!confirm('This will overwrite your current edits. Continue?')) {
+                        return;
+                    }
+                }
+
+                $('#to option').filter(function(){
+                    return $(this).val() == email.to;
+                }).prop('selected', true);
+
+                $('#from option').filter(function(){
+                    {% if event.manager.id == me.id %}
+                    if (email.from == 'manager') {
+                        return $(this).val() == 'me';
+                    }
+                    {% endif %}
+                    return $(this).val() == email.from;
+                }).prop('selected', true);
+
+                $('#subject').val(email.subject);
+                $('#message').val(email.message);
+                $('#is_marketing').prop('checked', email.is_marketing);
+            });
+        });
+    </script>
+{% endblock %}

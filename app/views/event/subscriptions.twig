@@ -1,0 +1,38 @@
+{% extends "template.twig" %}
+{% block title %}Subscriptions // {{ event.full_name }}{% endblock %}
+{% block section %}event{% endblock %}
+{% block subnav %}{% include "event/subnav.twig" %}{% endblock %}
+{% block content %}
+<header>
+  <h2>Subscriptions</h2>
+  <p>
+    View and manage who's subscribed to the pre-registration email list.<br>
+    There are currently {{ event.notify.count }} people subscribed
+    to the list.
+  </p>
+</header>
+
+<table class="directory">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for sub in event.notify %}
+    <tr>
+      <td>{{ sub.id }}</td>
+      <td><a href="mailto:{{ sub.email }}">{{ sub.email }}</a></td>
+      <td>
+        <form method="post" class="small dangerous" action="/event/{{ event.id }}/subscriptions/delete">
+          <input type="hidden" name="id" value="{{ sub.id }}"/>
+          <input type="submit" value="Delete" />
+        {{ csrf|raw }}</form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
