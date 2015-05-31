@@ -1,27 +1,13 @@
 <?php
-    $myEvent = $_REQUEST["myEvent"];
-    $userID = $_REQUEST["userID"];
-    
+    $myEvent = $_REQUEST["selectedEvent"];
     include('simple_html_dom.php');
     include('events.php');
-    
     if($userEvent['current_event']['overflow_event'] != null && $userEvent['current_event']['webname'] != $myEvent) {
         $selectedEvent = $userEvent['current_event']['overflow_event'];
     } else {
         $selectedEvent = $userEvent;
     }
-
-    $eventID = $selectedEvent['current_event']['id'];
-
     include('eventscraper.php');
-    
-    if(!isset($userID)) {
-        header('Location: index.php?selectedEvent=' . $myEvent . "&userID=none");
-    } elseif($userID == "none") {
-        $emailIsPresent = false;
-    } else {
-        $emailIsPresent = true;
-    }
     
     if(!isset($selectedEvent)) {
         header('Location: selectevent.php');
@@ -36,7 +22,7 @@
 <html lang="en">
 
 <head>
-    <title>MyCodeDay <?php echo($regionName) ?></title>
+    <title>MyCodeDay <?php echo($selectedEvent['name']) ?></title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/sweet-alert.css" />
     <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png" />
@@ -64,10 +50,8 @@
 -->
         <section class="user">
             <ul>
-                <?php if($emailIsPresent) {    
-                    echo("<li class=\"username\">" . $userID . "</li>");
-                } ?>
-                <li class="batch"><a href="http://codeday.org/sv">CodeDay <?php echo($regionName) ?></a>
+                <li class="username">[s5 username]</li>
+                <li class="batch"><a href="http://codeday.org/sv">CodeDay <?php echo($selectedEvent['current_event']['region_name']) ?></a>
                 </li>
                 <li class="logout"><a href="/logout">Logout</a>
                 </li>
@@ -77,7 +61,7 @@
 
     <div class="wrap">
         <section class="subnav">
-            <h2>MyCodeDay<br/><ultralight><?php echo($regionName) ?></ultralight></h2>
+            <h2>MyCodeDay<br/><ultralight><?php echo($selectedEvent['current_event']['region_name']) ?></ultralight></h2>
 
             <section class="general">
                 <ul>
@@ -97,7 +81,7 @@
                     </li>
                 </ul>
             </section>
-
+<!--
             <section class="website">
                 <h3>Social</h3>
                 <ul>
@@ -107,7 +91,7 @@
                     </li>
                 </ul>
             </section>
-
+-->
             <section class="settings">
                 <h3>CodeDay Tools</h3>
                 <ul>
@@ -125,11 +109,11 @@
                     <ul>
                         <li>
                             <span class="label">Event</span>
-                            <span class="value"><?php echo($eventName) ?></span>
+                            <span class="value"><?php echo($selectedEvent['current_event']['region_name']) ?></span>
                         </li>
                         <li>
                             <span class="label">Venue</span>
-                            <span class="value"><a href=<?php echo($venueLink) ?>><?php echo($venueName) ?></a></span>
+                            <span class="value"><?php echo($eventVenue) ?></span>
                         </li>
                         <li>
                             <span class="label">Date</span>
@@ -137,16 +121,8 @@
                         </li>
                         <li>
                             <span class="label">Attendees</span>
-                            <span class="value"><?php echo($attendeeCount) ?></span>
+                            <span class="value"><?php echo($selectedEvent['current_event']['registration_info']['max'] - $selectedEvent['current_event']['registration_info']['remaining']) ?></span>
                         </li>
-                    <?php
-                        if($waiverLink!=null) {
-                        echo("<li>
-                                <span class=\"label\">Waiver</span>
-                                <span class=\"value\"><a href=" . $waiverLink . ">Here (urgent!)</a></span>
-                            </li>");
-                        }
-                        ?>
                     </ul>
                 </section>
 <!--
@@ -183,7 +159,7 @@
     </div>
 
     <footer>
-        Copyright &copy; 2015 Sanil Chawla.
+        Copyright &copy; 2015 Sanil Chawla.<?php echo(' // If you see this, PHP is working.') ?>
     </footer>
     <script type="text/javascript" src="assets/js/sweet-alert.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
@@ -215,4 +191,5 @@
     <script src="assets/js/shepherd.min.js"></script>
     <script src="assets/js/tour.js"></script>
 </body>
-</html>
+
+

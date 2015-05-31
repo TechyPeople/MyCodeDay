@@ -236,8 +236,8 @@ form button:hover {
     left: 90%;
     width: 160px;
     height: 160px;
-    -webkit-animation-delay: 11s;
-    animation-delay: 11s;
+    -webkit-animation-delay: 8s;
+    animation-delay: 8s;
 }
 
 @-webkit-keyframes square {
@@ -246,8 +246,8 @@ form button:hover {
         transform: translateY(0);
     }
     100% {
-        -webkit-transform: translateY(-700px) rotate(600deg);
-        transform: translateY(-700px) rotate(600deg);
+        -webkit-transform: translateY(-100%) rotate(600deg);
+        transform: translateY(-100%) rotate(600deg);
     }
 }
 
@@ -257,7 +257,7 @@ form button:hover {
         transform: translateY(0);
     }
     100% {
-        -webkit-transform: translateY(-700px) rotate(600deg);
-        transform: translateY(-700px) rotate(600deg);
+        -webkit-transform: translateY(-1500px) rotate(600deg);
+        transform: translateY(-1500px) rotate(600deg);
     }
 }
