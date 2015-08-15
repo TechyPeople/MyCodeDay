@@ -69,9 +69,9 @@
                     <?php if($emailIsPresent) {    
                     echo("<li class=\"username\">" . $userName . "</li>");
                 } ?>
-                        <li class="batch"><a href="http://codeday.org/sv">CodeDay <?php echo($regionName) ?></a>
+                        <li class="batch"><a href=<?php echo( "http://codeday.org/" . $myEvent) ?>>CodeDay <?php echo($regionName) ?></a>
                         </li>
-                        <li class="logout"><a href="/logout">Logout</a>
+                        <li class="logout"><a href="/selectevent.php">Logout</a>
                         </li>
                 </ul>
             </section>

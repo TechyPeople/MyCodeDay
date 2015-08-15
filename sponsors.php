@@ -70,9 +70,9 @@
                     <?php if($emailIsPresent) {    
                     echo("<li class=\"username\">" . $userName . "</li>");
                 } ?>
-                        <li class="batch"><a href="http://codeday.org/sv">CodeDay <?php echo($regionName) ?></a>
+                        <li class="batch"><a href=<?php echo( "http://codeday.org/" . $myEvent) ?>>CodeDay <?php echo($regionName) ?></a>
                         </li>
-                        <li class="logout"><a href="/logout">Logout</a>
+                        <li class="logout"><a href="/selectevent.php">Logout</a>
                         </li>
                 </ul>
             </section>
@@ -97,6 +97,8 @@
                         <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
                         </li>
                         <li><a href="#">Sponsors</a>
+                        </li>
+                        <li><a href=<?php echo( "https://codeday.org/" . $myEvent . "#schedule") ?>>Schedule</a>
                         </li>
                     </ul>
                 </section>
