@@ -1,0 +1,251 @@
+{
+    "id": "olR7XPrqyYpK",
+    "name": "CodeDay San Francisco Fall 2015",
+    "region_name": "San Francisco",
+    "webname": "sf",
+    "starts_at": 1446926400,
+    "ends_at": 1447012800,
+    "venue": null,
+    "manager": {
+        "username": "sanil",
+        "name": "Sanil Chawla",
+        "first_name": "Sanil",
+        "last_name": "Chawla",
+        "email": "sanil@studentrnd.org",
+        "is_admin": false,
+        "phone": "5103979894"
+    },
+    "evangelist": null,
+    "registration_info": {
+        "estimate": "100",
+        "max": null,
+        "is_open": false,
+        "remaining": 0,
+        "is_earlybird_ending": true
+    },
+    "emergency_phone": "1000@sip.studentrnd.org:5080",
+    "waiver": null,
+    "stripe_public_key": "pk_v0AIOIy377403GN0FKltGR9gOAAUe",
+    "is_early_bird_pricing": true,
+    "schedule": {
+        "Saturday": [{
+            "time": -1,
+            "title": "Doors open",
+            "type": "event",
+            "description": "Please don't show up earlier, you'll be waiting outside!",
+            "timestamp": {
+                "date": "2015-11-07 11:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "11am",
+            "day": "Saturday"
+        }, {
+            "time": -0.5,
+            "title": "Lunch",
+            "type": "event",
+            "description": "All food is included with your ticket!",
+            "timestamp": {
+                "date": "2015-11-07 11:30:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "11am",
+            "day": "Saturday"
+        }, {
+            "time": 0,
+            "title": "Kickoff & Pitches",
+            "type": "event",
+            "description": "Not sure what you want to work on? Get some ideas and form a team at the kickoff.",
+            "timestamp": {
+                "date": "2015-11-07 12:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "12pm",
+            "day": "Saturday"
+        }, {
+            "time": 1,
+            "title": "Start Coding!",
+            "type": "event",
+            "description": "After forming teams, it's time to get to work on your project! Our staff will be helping teams throughout the event.",
+            "timestamp": {
+                "date": "2015-11-07 13:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "1pm",
+            "day": "Saturday"
+        }, {
+            "time": 2,
+            "title": "Beginner: Intro to coding",
+            "type": "workshop",
+            "url": "https:\/\/www.scirra.com\/tutorials\/37\/beginners-guide-to-construct-2",
+            "description": "Totally new to coding? No problem! Attend this workshop and we'll walk you through creating your first game.",
+            "timestamp": {
+                "date": "2015-11-07 14:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "2pm",
+            "day": "Saturday"
+        }, {
+            "time": 5,
+            "title": "Splunk: Make your game better with data",
+            "type": "workshop",
+            "url": "https:\/\/studentrnd.org\/build\/making-better-games-with-splunk",
+            "description": "Learn how others play your game and use that knowledge to make it more fun with minimal work.",
+            "timestamp": {
+                "date": "2015-11-07 17:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "5pm",
+            "day": "Saturday"
+        }, {
+            "time": 7,
+            "title": "Dinner",
+            "type": "event",
+            "description": "All food is included with your ticket!",
+            "timestamp": {
+                "date": "2015-11-07 19:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "7pm",
+            "day": "Saturday"
+        }],
+        "Sunday": [{
+            "time": 12,
+            "title": "Midnight Snack",
+            "type": "event",
+            "description": "All food is included with your ticket!",
+            "timestamp": {
+                "date": "2015-11-08 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "12am",
+            "day": "Sunday"
+        }, {
+            "time": 19,
+            "title": "Breakfast",
+            "type": "event",
+            "description": "All food is included with your ticket!",
+            "timestamp": {
+                "date": "2015-11-08 07:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "7am",
+            "day": "Sunday"
+        }, {
+            "time": 20,
+            "title": "Presentation sign-up",
+            "type": "event",
+            "description": "The final few hours. Teams with something to show are encouraged to sign up to present at the end.",
+            "timestamp": {
+                "date": "2015-11-08 08:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "8am",
+            "day": "Sunday"
+        }, {
+            "time": 21,
+            "title": "Judges arrive",
+            "type": "event",
+            "description": "Judges will go around to demo the projects before the final presentations.",
+            "timestamp": {
+                "date": "2015-11-08 09:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "9am",
+            "day": "Sunday"
+        }, {
+            "time": 22,
+            "title": "Presentations",
+            "type": "event",
+            "description": "Everyone who created something during CodeDay is asked to give a brief presentation.",
+            "timestamp": {
+                "date": "2015-11-08 10:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "10am",
+            "day": "Sunday"
+        }, {
+            "time": 23.5,
+            "title": "Awards",
+            "type": "event",
+            "description": "Awards given for Top Overall, Best App, Best Game, and more.",
+            "timestamp": {
+                "date": "2015-11-08 11:30:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "11am",
+            "day": "Sunday"
+        }, {
+            "time": 24,
+            "title": "Clean-up",
+            "type": "event",
+            "description": "Thank the venue for hosting CodeDay by helping clean up!",
+            "timestamp": {
+                "date": "2015-11-08 12:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "America\/Los_Angeles"
+            },
+            "hour": "12pm",
+            "day": "Sunday"
+        }]
+    },
+    "sponsors": [],
+    "custom_css": null,
+    "cost": 10,
+    "notice": null,
+    "region": {
+        "id": "sf",
+        "name": "San Francisco",
+        "webname": "sf",
+        "abbr": "SF",
+        "location": {
+            "lat": "37.78",
+            "lng": "-122.42"
+        },
+        "timezone": "America\/Los_Angeles",
+        "timezone_group": "Pacific",
+        "current_event": {
+            "id": "olR7XPrqyYpK",
+            "name": "CodeDay San Francisco Fall 2015",
+            "region_name": "San Francisco",
+            "webname": "sf",
+            "starts_at": 1446926400,
+            "ends_at": 1447012800,
+            "registration_info": {
+                "estimate": "100",
+                "max": null,
+                "is_open": false,
+                "remaining": 0,
+                "is_earlybird_ending": true
+            },
+            "emergency_phone": "1000@sip.studentrnd.org:5080",
+            "waiver": null,
+            "stripe_public_key": "pk_v0AIOIy377403GN0FKltGR9gOAAUe",
+            "is_early_bird_pricing": true,
+            "cost": 10,
+            "notice": null,
+            "overflow_event": null
+        }
+    },
+    "batch": {
+        "id": "FR51aXY34zIB",
+        "name": "Fall 2015",
+        "starts_at": "2015-11-07",
+        "ends_at": "2015-11-08",
+        "is_loaded": true
+    },
+    "overflow_event": null,
+    "related_events": []
+}

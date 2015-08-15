@@ -12,6 +12,13 @@
     $venueLink = "https://www.google.com/maps/place/" . $venueAddressReady;
     $attendeeCount = $eventDetails['registration_info']['max'] - $eventDetails['registration_info']['remaining'];
     $waiverLink = $eventDetails['waiver'];
+
+    $startDate = $eventDetails['batch']['starts_at'];
+    $endDate = $eventDetails['batch']['ends_at'];
+
+    $manager = $eventDetails['manager']['name'];
+    $managerPhone = $eventDetails['manager']['phone'];
+    $managerEmail = $eventDetails['manager']['email'];
     
     if($venueName == "") {
         $venueName = "No venue yet!  Check back soon.";

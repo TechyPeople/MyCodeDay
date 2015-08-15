@@ -16,7 +16,7 @@
     include('eventscraper.php');
     
     if(!isset($userID)) {
-        header('Location: index.php?selectedEvent=' . $myEvent . "&userID=none");
+        header('Location: staff.php?selectedEvent=' . $myEvent . "&userID=none");
     } elseif($userID == "none") {
         $emailIsPresent = false;
     } else {
@@ -126,16 +126,16 @@
                     <section class="hud">
                         <ul>
                             <li>
-                                <span class="label">Event</span>
-                                <span class="value"><?php echo($eventName) ?></span>
+                                <span class="label">Event Manager</span>
+                                <span class="value"><?php echo($manager) ?></span>
                             </li>
                             <li>
-                                <span class="label">Venue</span>
-                                <span class="value"><a href=<?php echo($venueLink) ?>><?php echo($venueName) ?></a></span>
+                                <span class="label">Phone Number</span>
+                                <span class="value"><a href=<?php echo($managerPhone) ?>><?php echo($venueName) ?></a></span>
                             </li>
                             <li>
-                                <span class="label">Date</span>
-                                <span class="value"><?php echo($startDate . " to " . $endDate) ?></span>
+                                <span class="label">Email Address</span>
+                                <span class="value"><?php echo($managerEmail) ?></span>
                             </li>
                             <li>
                                 <span class="label">Attendees</span>
