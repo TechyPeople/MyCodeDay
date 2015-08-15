@@ -6,41 +6,33 @@ body > div.wrap {
     max-width: 1024px;
     padding: 1.75rem 0;
 }
-
 ultralight {
     font-weight: 100;
 }
-
 body > div.wrap > section.content.with-subnav {
     width: 80%;
     float: right;
 }
-
 body > div.wrap > section.content > header {
     clear: both;
     margin: 2rem 0;
 }
-
 body > div.wrap > section.content > header:first-child {
     margin-top: 0;
 }
-
 body > div.wrap > section.content > header h2 {
     font-weight: 100;
     font-size: 2.5rem;
     margin: 0;
 }
-
 body > div.wrap > section.content > header p {
     font-weight: 300;
     font-size: 0.75rem;
     max-width: 30rem;
 }
-
 body > div.wrap > section.content > header p:first-child {
     margin: 0.3rem 0 0;
 }
-
 body > div.wrap > section.content h2,
 body > div.wrap > section.content h3,
 body > div.wrap > section.content h4,
@@ -48,41 +40,33 @@ body > div.wrap > section.content h5,
 body > div.wrap > section.content h6 {
     clear: right;
 }
-
 body > div.wrap > section.content h3 {
     margin-top: 1rem;
 }
-
 body > div.wrap > section.subnav {
     float: left;
     width: 18%;
     margin-right: 2%;
 }
-
 body > div.wrap > section.subnav h2 {
     margin-top: 0;
     text-align: center;
 }
-
 body > div.wrap > section.subnav ul {
     padding: 0;
 }
-
 body > div.wrap > section.subnav ul li {
     list-style-type: none;
 }
-
 body > div.wrap > section.subnav ul li a {
     text-decoration: none;
     display: block;
     border-bottom: 1px solid #666;
     padding: 0.25rem 0;
 }
-
 body > div.wrap > section.subnav ul li:first-child a {
     padding-top: 0;
 }
-
 body > div.wrap:after {
     content: "";
     clear: both;
@@ -90,7 +74,6 @@ body > div.wrap:after {
     width: 0;
     height: 0;
 }
-
 body > footer {
     width: 100%;
     margin: 0 auto;
@@ -101,14 +84,12 @@ body > footer {
     padding: 1rem 0;
     border-top: 1px solid #000;
 }
-
 body > header {
     width: 100%;
     margin: 0 auto;
     max-width: 1024px;
     border-bottom: 1px solid #000;
 }
-
 body > header h1 {
     float: left;
     text-indent: -19999px;
@@ -119,77 +100,62 @@ body > header h1 {
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
-
 body > header nav,
 body > header section.user {
     padding-top: 0.7rem;
 }
-
 body > header nav ul,
 body > header section.user ul {
     padding: 0;
 }
-
 body > header nav ul li,
 body > header section.user ul li {
     list-style-type: none;
     display: inline-block;
 }
-
 body > header nav ul li a,
 body > header section.user ul li a {
     text-decoration: none;
 }
-
 body > header nav {
     float: left;
     padding-left: 1rem;
 }
-
 body > header nav ul li.active a {
     color: #FB481C;
     font-weight: 500;
     border-bottom: none;
 }
-
 body > header nav ul li a {
     margin-right: 1rem;
     font-weight: 300;
     border-bottom: 1px dotted #efdede;
 }
-
 body > header nav ul li a:hover {
     border-bottom-color: #FB481C;
 }
-
 body > header section.user {
     float: right;
     font-size: 0.75rem;
     padding-top: 1.05rem;
 }
-
 body > header section.user li {
     font-weight: 300;
 }
-
 body > header section.user li.username {
     font-weight: 700;
 }
-
 body > header section.user li a:hover {
     color: #FB481C;
 }
-
 body > header section.user li:not(:last-child) {
     padding-right: 0;
 }
-
 body > header section.user li:not(:last-child):after {
     content: "•";
     color: #efdede;
     padding: 0 0.5rem;
 }
-
 body > header:after {
     content: "";
     clear: both;
@@ -197,16 +163,13 @@ body > header:after {
     width: 0;
     height: 0;
 }
-
 .wrap::-webkit-input-placeholder {
     color: #ddbcbc;
 }
-
 .wrap::-moz-placeholder {
     color: #ddbcbc;
     opacity: 1;
 }
-
 .wrap input[type="text"],
 .wrap input[type="url"],
 .wrap input[type="number"],
@@ -230,7 +193,6 @@ body > header:after {
     background-color: #f7efef;
     line-height: 1.3;
 }
-
 .wrap input[type="text"]:focus,
 .wrap input[type="url"]:focus,
 .wrap input[type="number"]:focus,
@@ -245,23 +207,19 @@ body > header:after {
     border-color: #FB481C;
     color: #000;
 }
-
 .wrap .group {
     border-bottom: none !important;
 }
-
 .wrap textarea {
     border-right: 1px solid #111;
     height: 10rem;
 }
-
 .wrap textarea.markdown {
     position: relative;
     background-image: url(../img/markdown.png);
     background-repeat: no-repeat;
     background-position: 100% 100%;
 }
-
 .wrap select {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
@@ -269,7 +227,6 @@ body > header:after {
     background-color: transparent;
     -webkit-appearance: none;
 }
-
 .wrap a.action,
 .wrap form input[type="submit"],
 .wrap button {
@@ -290,21 +247,18 @@ body > header:after {
     padding: 7px 12px !important;
     outline: 0;
 }
-
 .wrap a.action:hover,
 .wrap form input[type="submit"]:hover,
 .wrap button:hover {
     color: #111;
     background: linear-gradient(#FCFCFC, #E0E5E8) repeat scroll 0% 0% transparent;
 }
-
 .wrap a.action:active,
 .wrap form input[type="submit"]:active,
 .wrap button:active {
     color: #111;
     background: linear-gradient(#E0E5E8, #FCFCFC) repeat scroll 0% 0% transparent !important;
 }
-
 .wrap a.action:after,
 .wrap form input[type="submit"]:after,
 .wrap button:after {
@@ -314,11 +268,9 @@ body > header:after {
     width: 0;
     height: 0;
 }
-
 .wrap form.small {
     display: inline-block;
 }
-
 .wrap form.small input[type="submit"] {
     display: inline-block;
     float: none;
@@ -326,21 +278,17 @@ body > header:after {
     height: auto;
     padding: 0.1rem;
 }
-
 .wrap table.edit {
     width: 100%;
 }
-
 .wrap table.edit td,
 .wrap table.edit th {
     text-align: center;
 }
-
 .wrap table.edit td:first-child,
 .wrap table.edit th:first-child {
     text-align: right;
 }
-
 .wrap table.edit td input,
 .wrap table.edit td select,
 .wrap table.edit td button,
@@ -349,7 +297,6 @@ body > header:after {
 .wrap table.edit th button {
     text-align: left;
 }
-
 .wrap table.edit input[type="submit"],
 .wrap table.edit button {
     display: inline-block;
@@ -358,25 +305,20 @@ body > header:after {
     margin: 0;
     width: auto;
 }
-
 .wrap form div.field {
     clear: both;
     padding-bottom: 2rem;
 }
-
 .wrap form div.field.template {
     color: #ccc;
 }
-
 .wrap form div.field.template select {
     border-bottom-color: #ccc;
     color: #ccc;
 }
-
 .wrap form div.field.template .help {
     color: #ccc;
 }
-
 .wrap form div.field:after {
     content: "";
     display: block;
@@ -384,13 +326,11 @@ body > header:after {
     width: 0;
     height: 0;
 }
-
 .wrap form div.field > label {
     width: 25%;
     float: left;
     padding-top: 3px;
 }
-
 .wrap form div.field > input[type="text"],
 .wrap form div.field > input[type="url"],
 .wrap form div.field > input[type="number"],
@@ -407,11 +347,9 @@ body > header:after {
     width: 75%;
     float: right;
 }
-
 .wrap form div.field div.file label {
     font-size: 0.75rem;
 }
-
 .wrap form div.field .help {
     width: 75%;
     display: block;
@@ -421,7 +359,6 @@ body > header:after {
     font-weight: 300;
     color: #111;
 }
-
 .wrap section.content > section.new {
     display: block;
     padding: 1rem;
@@ -431,17 +368,14 @@ body > header:after {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
     margin-bottom: 1rem;
 }
-
 .wrap section.content > section.new h3 {
     margin-top: 0;
 }
-
 div.region-picker {
     width: 100%;
     height: 400px;
     margin-bottom: 0;
 }
-
 input.region-picker {
     width: 100%;
     font-size: 1.2rem;
@@ -452,11 +386,9 @@ input.region-picker {
     text-align: center;
     padding: 0.25rem;
 }
-
 ul.batches {
     padding: 0;
 }
-
 ul.batches li {
     list-style-type: none;
     width: 20%;
@@ -464,12 +396,10 @@ ul.batches li {
     float: left;
     margin: 0 0.5rem 0 0;
 }
-
 ul.batches li a {
     text-decoration: none;
     color: #111;
 }
-
 ul.batches li.new a {
     display: block;
     width: 100%;
@@ -480,17 +410,14 @@ ul.batches li.new a {
     border-top-width: 2.15rem;
     padding: 0.5rem 0;
 }
-
 ul.batches li.loaded .month,
 ul.batches li.loaded .year {
     background-color: #FB481C;
     color: #f7efef;
 }
-
 ul.batches li.loaded .day {
     border-color: #FB481C;
 }
-
 ul.batches li .month,
 ul.batches li .year {
     display: block;
@@ -502,7 +429,6 @@ ul.batches li .year {
     width: 100%;
     background-color: #efdede;
 }
-
 ul.batches li .day {
     display: block;
     width: 100%;
@@ -513,7 +439,6 @@ ul.batches li .day {
     border-top: none;
     padding: 0.5rem 0;
 }
-
 ul.batches li .events {
     display: block;
     width: 100%;
@@ -522,12 +447,10 @@ ul.batches li .events {
     padding-top: 0.3rem;
     font-weight: 300;
 }
-
 ul.batches li .events:after {
     content: "events";
     padding-left: 0.2rem;
 }
-
 ul.batches:after {
     content: "";
     clear: both;
@@ -535,7 +458,6 @@ ul.batches:after {
     width: 0;
     height: 0;
 }
-
 body > .info {
     width: 100%;
     text-align: center;
@@ -546,81 +468,66 @@ body > .info {
     font-size: 0.8rem;
     overflow: hidden;
 }
-
 body > .info a {
     color: #fff;
 }
-
 body > .info.status {
     background-color: #15E014;
     border-bottom-color: #80f480;
     color: #0c820c;
 }
-
 body > .info.old-batch,
 body > .info.error {
     background-color: #FB481C;
     border-bottom-color: #fdad99;
     color: #ae2503;
 }
-
 body.dashboard section.content > .countdown {
     padding: 0 0 2rem;
     border-bottom: 1px solid #efdede;
 }
-
 body.dashboard section.content > .countdown .active {
     font-weight: 500;
     font-size: 2.5rem;
 }
-
 body.dashboard section.content > .countdown .details {
     font-weight: 300;
     font-size: 0.75rem;
     padding-top: 0.3rem;
 }
-
 body.dashboard section.content > .countdown .details .name:after {
     content: "•";
     color: #efdede;
     padding: 0 0.3rem;
 }
-
 body.dashboard section.content > .my-events {
     border-bottom: 1px solid #efdede;
 }
-
 body.dashboard section.content > .my-events ul {
     padding: 0;
 }
-
 body.dashboard section.content > .my-events ul li {
     list-style-type: none;
     padding: 1rem 0;
 }
-
 body.dashboard section.content > .my-events ul li div {
     float: left;
     width: 16.66%;
     display: block;
 }
-
 body.dashboard section.content > .my-events ul li div span {
     display: block;
     text-align: center;
 }
-
 body.dashboard section.content > .my-events ul li div span.number {
     font-size: 2.25rem;
     padding-top: 0.5rem;
 }
-
 body.dashboard section.content > .my-events ul li div span.label {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 0.75rem;
 }
-
 body.dashboard section.content > .my-events ul li div.name {
     border: 1px solid #111;
     background-color: #efdede;
@@ -633,19 +540,15 @@ body.dashboard section.content > .my-events ul li div.name {
     margin-right: 4.66%;
     padding-top: 1rem;
 }
-
 body.dashboard section.content > .my-events ul li div.name.open {
     background-color: #15E014;
 }
-
 body.dashboard section.content > .my-events ul li div.name.venue {
     background-color: #0343FA;
 }
-
 body.dashboard section.content > .my-events ul li div.name.closed {
     background-color: #FB481C;
 }
-
 body.dashboard section.content > .my-events ul li:after {
     content: "";
     clear: both;
@@ -653,42 +556,34 @@ body.dashboard section.content > .my-events ul li:after {
     width: 0;
     height: 0;
 }
-
 body.dashboard section.content > .other-events {
     padding-top: 2rem;
 }
-
 body.dashboard section.content > .other-events section.map {
     float: right;
     width: 60%;
 }
-
 body.dashboard section.content > .other-events section.map div.heatmap {
     width: 100%;
     height: 300px;
 }
-
 body.dashboard section.content > .other-events section.list {
     width: 35%;
     float: left;
 }
-
 body.dashboard section.content > .other-events section.list ul {
     margin: 0;
     padding: 0;
 }
-
 body.dashboard section.content > .other-events section.list ul li {
     list-style-type: none;
     padding: 0.15rem 0;
     float: left;
     width: 50%;
 }
-
 body.dashboard section.content > .other-events section.list ul li a {
     text-decoration: none;
 }
-
 body.dashboard section.content > .other-events section.list ul li div.name {
     border: 1px solid #111;
     background-color: #efdede;
@@ -700,48 +595,38 @@ body.dashboard section.content > .other-events section.list ul li div.name {
     width: 2.5rem;
     margin-right: 0.2rem;
 }
-
 body.dashboard section.content > .other-events section.list ul li div.name.sold-out {
     background-color: #000;
     color: #fff;
 }
-
 body.dashboard section.content > .other-events section.list ul li div.name.open {
     background-color: #15E014;
 }
-
 body.dashboard section.content > .other-events section.list ul li div.name.venue {
     background-color: #0343FA;
 }
-
 body.dashboard section.content > .other-events section.list ul li div.name.closed {
     background-color: #FB481C;
 }
-
 body.dashboard section.content > .other-events section.list ul li div {
     display: inline;
 }
-
 body.dashboard section.content > .other-events section.list ul li div.registrants:after {
     content: ",";
     margin: 0 0.2 0 -0.2rem;
 }
-
 body.dashboard section.content > .other-events section.list ul li div span {
     text-align: left;
 }
-
 body.dashboard section.content > .other-events section.list ul li div span.number {
     font-size: 0.75rem;
     padding-top: 0.5rem;
 }
-
 body.dashboard section.content > .other-events section.list ul li div span.label {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 0.75rem;
 }
-
 body.dashboard section.content > .other-events section.list ul li:after {
     content: "";
     clear: both;
@@ -749,12 +634,10 @@ body.dashboard section.content > .other-events section.list ul li:after {
     width: 0;
     height: 0;
 }
-
 body.event .content > .status {
     border: 1px solid #efdede;
     padding: 1rem 0;
 }
-
 body.event .content > .status:after {
     content: "";
     display: block;
@@ -762,84 +645,69 @@ body.event .content > .status:after {
     width: 0;
     height: 0;
 }
-
 body.event .content > .status .hud {
     width: 100%;
     float: left;
 }
-
 body.event .content > .status .hud ul {
     padding: 0;
     margin: 0;
 }
-
 body.event .content > .status .hud ul li {
     list-style-type: none;
     padding: 0.2rem 0;
 }
-
 body.event .content > .status .hud ul li .label {
     display: inline-block;
-    width: 7rem;
+    width: 10rem;
     padding-right: 1rem;
     font-size: 0.8rem;
     text-transform: uppercase;
     text-align: right;
 }
-
 body.event .content > .status .hud ul li .value {
     font-size: 0.9rem;
+    width: auto;
 }
-
 body.event .content > .status .hud ul li .status.success {
     color: #15E014;
 }
-
 body.event .content > .status .hud ul li .status.failure {
     color: #FB481C;
 }
-
 body.event .content > .status .toggles {
     width: 70%;
     float: right;
     margin-top: 1.8rem;
     text-align: center;
 }
-
 body.event .content > .status .toggles form {
     display: inline-block;
     margin-right: 2rem;
 }
-
 body.event .content > .status .toggles form .label.on {
     color: #15E014;
 }
-
 body.event form.notes .field {
     padding-bottom: 0;
 }
-
 body.event form.notes .field label {
     display: none;
 }
-
 body.event form.notes .field textarea,
 body.event form.notes .field .help {
     width: 100%;
     margin: 0;
 }
-
 body.event form.notes .field textarea {
     border: 1px solid #efdede;
 }
-
 body.event form.notes input[type="submit"] {
     margin-top: -0.9rem;
     border-top: 0;
     background-color: transparent;
     border-color: #efdede;
 }
-
 body.event form div.field #venue_city,
 body.event form div.field #venue_state,
 body.event form div.field #venue_postal,
@@ -852,81 +720,65 @@ body.event form div.field #ship_country {
     margin-left: 0.75%;
     margin-bottom: 0.25rem;
 }
-
 body.event form div.field #venue_country,
 body.event form div.field #ship_country {
     clear: right;
 }
-
 body.event form div.field #venue_postal,
 body.event form div.field #ship_postal {
     width: 22%;
 }
-
 body.event form div.field #venue_city,
 body.event form div.field #ship_city {
     width: 36.75%;
 }
-
 body.event form div.field #venue_state,
 body.event form div.field #ship_state,
 body.event form div.field #venue_country,
 body.event form div.field #ship_country {
     width: 7%;
 }
-
 body.event .venue .location {
     width: 60%;
     float: left;
 }
-
 body.event .venue .contact {
     width: 35%;
     float: left;
     margin-left: 4%;
 }
-
 body.event .venue .contact input {
     width: 100%;
     margin-bottom: 0.25rem;
 }
-
 body.event .venue .contact #venue_contact_first_name,
 body.event .venue .contact #venue_contact_last_name {
     width: 48.5%;
     display: inline-block;
 }
-
 body.event .venue .contact #venue_contact_last_name {
     margin-left: 1.125%;
 }
-
 body.event .venue input[type="submit"] {
     clear: both;
 }
-
 body.event .all.promotions {
     width: 100%;
 }
-
 body.event .all.promotions thead tr th {
     text-align: left;
 }
-
 body.event .all.promotions td {
     padding: 5px;
 }
-
 body.event .all.promotions .notes {
     width: 40%;
     height: 4rem;
     overflow-y: auto;
 }
-
 body.event .all.promotions .code {
     width: 25%;
 }
-
 body.event .all.promotions .code input {
     border: 1px dotted #FB481C;
     background-color: #ffeae4;
@@ -936,24 +788,19 @@ body.event .all.promotions .code input {
     -webkit-border-radius: 5px;
     padding: 4px;
 }
-
 body.event .all.promotions .scholarship .code input {
     border-color: #000;
     background-color: #ddd;
 }
-
 body.event .sponsors {
     padding: 0;
 }
-
 body.event .sponsors li {
     list-style-type: none;
 }
-
 body.event .sponsors li.add {
     text-align: center;
 }
-
 body.event .sponsors li a {
     display: block;
     padding: 1rem;
@@ -963,13 +810,11 @@ body.event .sponsors li a {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
     margin-bottom: 1rem;
 }
-
 body.event .sponsors li a header {
     display: block;
     height: 3rem;
     margin-bottom: 1rem;
 }
-
 body.event .sponsors li a header section.logo {
     width: 20%;
     height: 100%;
@@ -978,35 +823,28 @@ body.event .sponsors li a header section.logo {
     background-repeat: no-repeat;
     background-position: 100% 50%;
 }
-
 body.event .sponsors li a header section.info {
     width: 79%;
     display: inline-block;
 }
-
 body.event .sponsors li a header section.info h3 {
     font-size: 2rem;
     margin: 0;
 }
-
 body.event .sponsors li a header section.info span.url {
     font-size: 0.75rem;
 }
-
 body.event .sponsors li a > section {
     clear: both;
     padding: 1rem 0;
     border-top: 1px solid #efdede;
 }
-
 body.event .sponsors li a > section.blurb {
     font-size: 1.7rem;
 }
-
 body.event .current.registrations ul {
     padding: 0;
 }
-
 body.event .current.registrations ul li {
     list-style-type: none;
     width: 15%;
@@ -1015,35 +853,28 @@ body.event .current.registrations ul li {
     display: inline-block;
     text-align: center;
 }
-
 body.event .current.registrations ul li img {
     width: 100%;
     height: auto;
     border-bottom-width: 5px;
     border-bottom-style: solid;
 }
-
 body.event .current.registrations ul li.type-student img {
     border-bottom-width: 0;
 }
-
 body.event .current.registrations ul li.type-teacher img {
     border-color: #0343FA;
 }
-
 body.event .current.registrations ul li.type-volunteer img {
     border-color: #15E014;
 }
-
 body.event .current.registrations ul li.type-sponsor img {
     border-color: #FB481C;
 }
-
 body.event .current.registrations ul li a {
     text-decoration: none;
     border: 0;
 }
-
 body.event .current.registrations ul li a > span {
     display: block;
     width: 100%;
@@ -1052,52 +883,42 @@ body.event .current.registrations ul li a > span {
     text-overflow: ellipsis;
     font-size: 0.7rem;
 }
-
 body.event .registration.info .attendee {
     width: 50%;
     display: inline-block;
     vertical-align: top;
 }
-
 body.event .registration.info .parent {
     width: 45%;
     padding-left: 5%;
     display: inline-block;
     vertical-align: top;
 }
-
 body.event .registration.activities {
     clear: both;
     padding-top: 2rem;
 }
-
 body.event .registration.activities h3 {
     text-align: center;
 }
-
 body.event .registration.activities.activities-2 section {
     width: 48%;
 }
-
 body.event .registration.activities.activities-3 section {
     width: 32%;
 }
-
 body.event .registration.activities.activities-4 section {
     width: 24%;
 }
-
 body.event .registration.activities section {
     display: inline-block;
     vertical-align: top;
     position: relative;
     height: 14rem;
 }
-
 body.event .registration.activities section h4 {
     text-align: center;
 }
-
 body.event .registration.activities section form .field input[type="text"],
 body.event .registration.activities section form .field select {
     clear: both;
@@ -1105,27 +926,22 @@ body.event .registration.activities section form .field select {
     float: none;
     width: 100%;
 }
-
 body.event .registration.activities section form .field label {
     width: 75%;
 }
-
 body.event .registration.activities section form .field span.help {
     width: 100%;
     text-align: center;
 }
-
 body.event .registration.activities section form input[type="submit"] {
     width: 100%;
     float: none;
     position: absolute;
     bottom: 0;
 }
-
 body.event .sent-emails {
     padding: 0;
 }
-
 body.event .sent-emails li {
     border: 1px solid #ddbcbc;
     border-top-width: 0;
@@ -1134,11 +950,9 @@ body.event .sent-emails li {
     padding: 0.5rem;
     background-color: #efdede;
 }
-
 body.event .sent-emails li:first-child {
     border-top-width: 1px;
 }
-
 body.event .sent-emails li:after {
     content: "";
     display: block;
@@ -1146,30 +960,25 @@ body.event .sent-emails li:after {
     width: 0;
     height: 0;
 }
-
 body.event .sent-emails li span.to {
     display: block;
     width: 50%;
     float: left;
 }
-
 body.event .sent-emails li span.time {
     display: block;
     width: 50%;
     float: right;
     text-align: right;
 }
-
 body.event .sent-emails li span.subject {
     display: block;
     width: 100%;
 }
-
 body.event .flight-plans tr.person th {
     text-align: left;
     padding-top: 2rem;
 }
-
 body.event .flight-plans tr.direction th {
     text-align: left;
     font-weight: normal;
@@ -1178,25 +987,21 @@ body.event .flight-plans tr.direction th {
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
-
 body.event .flight-plans tr.layover td {
     text-align: center;
     font-style: italic;
     color: #ddbcbc;
     font-size: 0.75rem;
 }
-
 body.event .flight-plans tr.add td {
     padding-top: 3rem;
 }
-
 body.event .flight-plans input[type="submit"] {
     display: inline;
     width: auto;
     min-width: 0;
     float: none;
 }
-
 body.tools .events-selector:after {
     content: "";
     display: block;
@@ -1204,73 +1009,59 @@ body.tools .events-selector:after {
     width: 0;
     height: 0;
 }
-
 body.tools .events-selector ul {
     padding: 0;
     width: 25%;
     float: left;
 }
-
 body.tools .events-selector ul li {
     list-style-type: none;
 }
-
 body.tools .directory {
     border-collapse: collapse;
 }
-
 body.tools .directory td,
 body.tools .directory th {
     padding-right: 0.75rem;
     padding-bottom: 0.25rem;
 }
-
 body.tools .directory .event td,
 body.tools .directory .event th {
     padding-top: 1rem;
 }
-
 body.tools .tasks tr {
     height: 2.5rem;
 }
-
 body.tools .tasks tr td.step {
     padding-right: 1rem;
 }
-
 body.tools .tasks tr td.step.done span span {
     background-color: #15E014;
 }
-
 body.tools .tasks tr td.step > span {
     display: block;
     border: 1px solid #ddbcbc;
     padding: 1px;
     margin-bottom: 0.125rem;
 }
-
 body.tools .tasks tr td.step > span > span {
     display: block;
     background-color: #FB481C;
     width: 0.5rem;
     height: 0.5rem;
 }
-
 body.tools .checkin .type-teacher {
     color: #0343FA;
     font-weight: bold;
 }
-
 body.tools .checkin .type-volunteer {
     color: #15E014;
     font-weight: bold;
 }
-
 body.tools .checkin .type-sponsor {
     color: #FB481C;
     font-weight: bold;
 }
-
 body.tools .event-tidbits {
     display: block;
     padding: 1rem;
@@ -1280,131 +1071,106 @@ body.tools .event-tidbits {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
     margin-bottom: 1rem;
 }
-
 body.tools .event-tidbits header {
     display: block;
     margin-bottom: 1rem;
 }
-
 body.tools .event-tidbits header h3 {
     font-size: 2rem;
     margin: 0;
 }
-
 body.tools .event-tidbits header p {
     font-size: 0.8rem;
     color: #ddbcbc;
 }
-
 body.tools .event-tidbits h3 {
     text-transform: uppercase;
     color: #ddbcbc;
     margin-top: 0 !important;
     font-size: 1rem;
 }
-
 body.tools .event-tidbits .venue .map {
     display: inline-block;
     width: 60%;
     height: 300px;
 }
-
 body.tools .event-tidbits .venue .info {
     display: inline-block;
     width: 39%;
     vertical-align: top;
     text-align: center;
 }
-
 body.tools .event-tidbits .venue .info div.contact {
     margin-top: 1rem;
 }
-
 body.tools .event-tidbits .venue .info span {
     display: block;
 }
-
 body.tools .event-tidbits .sponsors p {
     font-size: 0.8rem;
     color: #ddbcbc;
 }
-
 body.tools .event-tidbits > section {
     clear: both;
     padding: 1rem 0;
     border-top: 1px solid #efdede;
 }
-
 body.tools .event-tidbits > section.blurb {
     font-size: 1.7rem;
 }
-
 body.tools .status {
     border-collapse: collapse;
 }
-
 body.tools .status thead th {
     font-size: 0.75rem;
     font-family: monospace;
 }
-
 body.tools .status tbody tr:nth-child(2n+1) {
     background-color: #efdede;
 }
-
 body.tools .status tbody tr td {
     border-left: 1px solid #ddbcbc;
     padding: 0.5rem;
 }
-
 body.tools .status tbody tr td.okay span span {
     background-color: #15E014;
 }
-
 body.tools .status tbody tr td > span {
     display: inline-block;
     border: 1px solid #ddbcbc;
     padding: 1px;
     margin-bottom: 0.125rem;
 }
-
 body.tools .status tbody tr td > span > span {
     display: block;
     background-color: #FB481C;
     width: 0.5rem;
     height: 0.5rem;
 }
-
 body.tools .banlist {
     width: 100%;
 }
-
 body.tools .banlist tr.expired {
     color: #ddbcbc;
 }
-
 body.tools .banlist tr.info:not(:first-child) td,
 body.tools .banlist tr.info:not(:first-child) th {
     padding-top: 2rem;
     border-top: 1px solid #ddbcbc;
 }
-
 body.tools .banlist tr.info td,
 body.tools .banlist tr.info th {
     padding-bottom: 1rem;
     text-align: left;
 }
-
 body.tools .banlist tr.info td.enforcement,
 body.tools .banlist tr.info th.enforcement {
     width: 100%;
 }
-
 body.tools .banlist tr.info td.actions,
 body.tools .banlist tr.info th.actions {
     width: 10%;
 }
-
 body.tools .banlist tr.info td .name,
 body.tools .banlist tr.info td .email,
 body.tools .banlist tr.info th .name,
@@ -1412,58 +1178,47 @@ body.tools .banlist tr.info th .email {
     display: block;
     margin-right: 1rem;
 }
-
 body.tools .banlist tr.details td {
     padding-bottom: 2rem;
 }
-
 body.debug .log {
     border: 1px solid #ddbcbc;
     overflow-y: scroll;
     font-family: monospace;
     white-space: nowrap;
 }
-
 body.debug .queue-failed {
     padding: 0;
 }
-
 body.debug .queue-failed li {
     list-style-type: none;
     border-bottom: 1px solid #ddbcbc;
     padding: 1rem 0;
 }
-
 body.debug .queue-failed form {
     display: inline;
 }
-
 body.debug .queue-failed form input {
     display: inline;
     width: auto;
     padding: 0;
     float: none;
 }
-
 body.debug .queue-failed .payload {
     overflow-y: scroll;
 }
-
 body.docs .model-details {
     padding: 0;
 }
-
 body.docs .model-details li {
     list-style-type: none;
     padding-bottom: 2rem;
     padding-top: 1rem;
     border-bottom: 1px solid #efdede;
 }
-
 body.docs .model-details li:last-child {
     border-bottom: none;
 }
-
 body.docs .model-details li h3 .id {
     border: 1px solid #ddbcbc;
     background-color: #efdede;
@@ -1472,20 +1227,17 @@ body.docs .model-details li h3 .id {
     -moz-border-radius: 3px;
     font-family: monospace;
 }
-
 body.docs .model-details li .example,
 body.docs .model-details li .requires,
 body.docs .model-details li .type {
     padding-top: 0.5rem;
 }
-
 body.docs .model-details li .example h4,
 body.docs .model-details li .requires h4,
 body.docs .model-details li .type h4 {
     font-size: 1rem;
     display: inline;
 }
-
 body.docs .model-details li .example span,
 body.docs .model-details li .example a,
 body.docs .model-details li .requires span,
@@ -1500,42 +1252,33 @@ body.docs .model-details li .type a {
     -moz-border-radius: 3px;
     font-family: monospace;
 }
-
 .wrap .compose-email {
     border: 1px solid #ddbcbc;
 }
-
 .wrap .compose-email .field {
     border-bottom: 1px solid #efdede;
     padding: 0.25rem;
 }
-
 .wrap .compose-email .field label {
     width: 10%;
     color: #ddbcbc;
 }
-
 .wrap .compose-email .field.subject label {
     display: none;
 }
-
 .wrap .compose-email .field.subject input {
     width: 100%;
 }
-
 .wrap .compose-email .field.message {
     border-bottom: none;
 }
-
 .wrap .compose-email .field.message label {
     display: none;
 }
-
 .wrap .compose-email .field.message textarea {
     width: 100%;
     height: 20rem;
 }
-
 .wrap .compose-email .field input,
 .wrap .compose-email .field textarea,
 .wrap .compose-email .field select {
@@ -1544,33 +1287,27 @@ body.docs .model-details li .type a {
     font-family: "Roboto", sans-serif !important;
     font-size: 1rem;
 }
-
 .send-email {
     padding-bottom: 1.5rem;
 }
-
 .send-email:after {
     content: "";
     clear: both;
     display: block;
 }
-
 .send-email .marketing {
     margin-top: 0.75rem;
     float: left;
 }
-
 .send-email input[type="submit"] {
     border: 1px solid #ddbcbc;
     border-top: none;
 }
-
 .send-email select {
     float: right;
     margin-top: 0.25rem;
     margin-right: 1rem;
 }
-
 .switch {
     position: relative;
     width: 130px;
@@ -1578,7 +1315,6 @@ body.docs .model-details li .type a {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-
 .switch .label {
     width: 130px;
     text-align: center;
@@ -1588,35 +1324,28 @@ body.docs .model-details li .type a {
     padding-top: 0.4rem;
     color: #ddbcbc;
 }
-
 .switch input[type="checkbox"] {
     display: none;
 }
-
 .switch input[type="checkbox"]:disabled + label {
     cursor: not-allowed;
 }
-
 .switch input[type="checkbox"]:disabled + label .switch {
     text-indent: 0;
     background-color: transparent;
     border: none;
 }
-
 .switch input[type="checkbox"]:checked + label {
     border-color: #80f480;
 }
-
 .switch input[type="checkbox"]:checked + label .inner {
     margin-left: 0;
 }
-
 .switch input[type="checkbox"]:checked + label .switch {
     right: 0px;
     border-color: #80f480;
     color: #80f480;
 }
-
 .switch label {
     display: block;
     overflow: hidden;
@@ -1625,31 +1354,24 @@ body.docs .model-details li .type a {
     border-radius: 3px;
     position: relative;
 }
-
 .switch.onoff .inner:before {
     content: "ON";
 }
-
 .switch.onoff .inner:after {
     content: "OFF";
 }
-
 .switch.enableddisabled .inner:before {
     content: "ENABLED";
 }
-
 .switch.enableddisabled .inner:after {
     content: "DISABLED";
 }
-
 .switch.openclosed .inner:before {
     content: "OPEN";
 }
-
 .switch.openclosed .inner:after {
     content: "CLOSED";
 }
-
 .switch .inner {
     display: block;
     width: 200%;
@@ -1659,7 +1381,6 @@ body.docs .model-details li .type a {
     -o-transition: margin 0.3s ease-in 0s;
     transition: margin 0.3s ease-in 0s;
 }
-
 .switch .inner:before,
 .switch .inner:after {
     display: block;
@@ -1676,21 +1397,18 @@ body.docs .model-details li .type a {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 .switch .inner:before {
     padding-left: 10px;
     background-color: #15E014;
     color: #0c820c;
     text-align: left;
 }
-
 .switch .inner:after {
     padding-right: 10px;
     background-color: #efdede;
     color: #ddbcbc;
     text-align: right;
 }
-
 .switch .switch {
     display: block;
     width: 24px;
@@ -1712,7 +1430,6 @@ body.docs .model-details li .type a {
     -o-transition: all 0.3s ease-in 0s;
     transition: all 0.3s ease-in 0s;
 }
-
 .wrap,
 .wrap *,
 header,
@@ -1726,10 +1443,10 @@ footer *,
     -webkit-font-smoothing: antialiased;
     font-family: "Roboto", sans-serif;
 }
-
 body {
     background-color: #FFF;
 }
+
 /*
  body {
             background-color: red;
@@ -1829,4 +1546,5 @@ a:active,
 a:visited {
     color: #111;
 }
+
 /*# sourceMappingURL=style.css.map */

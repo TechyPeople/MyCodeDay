@@ -17,7 +17,7 @@
     include('eventscraper.php');
     
     if(!isset($userID)) {
-        header('Location: index.php?selectedEvent=' . $myEvent . "&userID=none");
+        header('Location: reg.php?selectedEvent=' . $myEvent . "&userID=none");
     } elseif($userID == "none") {
         $emailIsPresent = false;
     } else {
@@ -84,9 +84,9 @@
 
                 <section class="general">
                     <ul>
-                        <li><a href="#">Overview</a>
+                        <li><a href=<?php echo( "index.php?userID=" . $userID) ?>>Overview</a>
                         </li>
-                        <li><a href=<?php echo( "reg.php?userID=" . $userID) ?>>My Registration</a>
+                        <li><a href="#">My Registration</a>
                         </li>
                     </ul>
                 </section>
@@ -97,8 +97,6 @@
                         <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
                         </li>
                         <li><a href="sponsors.php">Sponsors</a>
-                        </li>
-                        <li><a href=<?php echo( "https://codeday.org/" . $myEvent . "#schedule") ?>>Schedule</a>
                         </li>
                     </ul>
                 </section>
@@ -121,37 +119,24 @@
         <li><a href="/event/Z3ftTdfVLFzi/shipping">CTF</a>
         </li>
     </ul>
-</section>-->
+</section>
+-->
 
             </section>
             <section class="content with-subnav">
                 <section class="status">
                     <section class="hud">
-                        <ul>
-                            <li>
-                                <span class="label">Event</span>
-                                <span class="value"><?php echo($eventName) ?></span>
-                            </li>
-                            <li>
-                                <span class="label">Venue</span>
-                                <span class="value"><a href=<?php echo($venueLink) ?>><?php echo($venueName) ?></a></span>
-                            </li>
-                            <li>
-                                <span class="label">Date</span>
-                                <span class="value"><?php echo($startDate . " to " . $endDate) ?></span>
-                            </li>
-                            <li>
-                                <span class="label">Attendees</span>
-                                <span class="value"><?php echo($attendeeCount) ?></span>
-                            </li>
+                        <ul style="list-style: none; position: relative; float: left; display: block; left: 50%;">
                             <?php
-                        if($waiverLink!=null) {
-                        echo("<li>
-                                <span class=\"label\">Waiver</span>
-                                <span class=\"value\"><a href=" . $waiverLink . ">Here (urgent!)</a></span>
-                            </li>");
-                        }
-                        ?>
+                                foreach($sponsorList as $sponsor) {
+                                    echo("
+                                        <li>
+                                            <span class=\"value\" style=\"horizontal-align: center; margin: 0  \"><a href=" . $sponsor['url'] . "><img src=" . $sponsor['logo'] . " style=\"width: 200px; padding: 20px; position: relative; float: center; display: block; right: 50%;\"></a></span>
+                                        </li>
+                                    ");
+                                }
+                            ?>
+
                         </ul>
                     </section>
                     <!--

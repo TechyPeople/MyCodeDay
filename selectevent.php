@@ -18,19 +18,21 @@
         <div class="container">
             <h1>Welcome to MyCodeDay</h1>
             <form class="form" action="index.php" method="get">
-                <input type="text" placeholder="Type your event ID..." name="myEvent">
+                <!--                <input type="text" placeholder="Type your event ID..." name="myEvent">-->
                 <input type="text" placeholder="Type your registration ID..." name="userID">
                 <button type="submit" id="login-button">Enter</button>
-                <p><br/>You can find your registration ID at the bottom of the confirmation email we sent you when you registered.</p>
+                <p>
+                    <br/>You can find your registration ID at the bottom of the confirmation email we sent you when you registered.</p>
             </form>
         </div>
         <script type="text/javascript">
-            $("#login-button").click(function (event) {
-//                event.preventDefault();
+            $("#login-button").click(function(event) {
+                //                event.preventDefault();
 
                 $('form').fadeOut(500);
                 $('.wrapper').addClass('form-success');
             });
+
         </script>
         <ul class="bg-bubbles">
             <li></li>

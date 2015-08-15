@@ -32,7 +32,7 @@
     }
 ?>
 
-    <!doctype html>
+    <!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -67,7 +67,7 @@
             <section class="user">
                 <ul>
                     <?php if($emailIsPresent) {    
-                    echo("<li class=\"username\">" . $userID . "</li>");
+                    echo("<li class=\"username\">" . $userName . "</li>");
                 } ?>
                         <li class="batch"><a href="http://codeday.org/sv">CodeDay <?php echo($regionName) ?></a>
                         </li>
@@ -83,9 +83,9 @@
 
                 <section class="general">
                     <ul>
-                        <li><a href="/event/Z3ftTdfVLFzi">Overview</a>
+                        <li><a href=<?php echo( "index.php?userID=" . $userID) ?>>Overview</a>
                         </li>
-                        <li><a href="/event/Z3ftTdfVLFzi/overview">Print-Friendly Overview</a>
+                        <li><a href=<?php echo( "reg.php?userID=" . $userID) ?>>My Registration</a>
                         </li>
                     </ul>
                 </section>
@@ -93,12 +93,15 @@
                 <section class="info">
                     <h3>Event Information</h3>
                     <ul>
-                        <li><a href="staff.php">Staff</a>
+                        <li><a href="#">Staff</a>
                         </li>
-                        <li><a href="/event/Z3ftTdfVLFzi/overview">Venue Info</a>
+                        <li><a href="sponsors.php">Sponsors</a>
+                        </li>
+                        <li><a href=<?php echo( "https://codeday.org/" . $myEvent . "#schedule") ?>>Schedule</a>
                         </li>
                     </ul>
                 </section>
+                <!--
 
                 <section class="website">
                     <h3>Social</h3>
@@ -119,6 +122,7 @@
                         </li>
                     </ul>
                 </section>
+-->
 
             </section>
             <section class="content with-subnav">
@@ -127,28 +131,20 @@
                         <ul>
                             <li>
                                 <span class="label">Event Manager</span>
-                                <span class="value"><?php echo($manager) ?></span>
+                                <span class="value"><?php echo($manager); if($manager == ""){echo("There isn't a manager for this event yet!");}?></span>
                             </li>
                             <li>
-                                <span class="label">Phone Number</span>
-                                <span class="value"><a href=<?php echo($managerPhone) ?>><?php echo($venueName) ?></a></span>
+                                <span class="label"><?php if($manager != "") { echo($managerFirstName . "'s Phone"); } else { echo("Phone Number"); } ?></span>
+                                <span class="value"><?php echo($managerPhone) ?></span>
                             </li>
                             <li>
                                 <span class="label">Email Address</span>
-                                <span class="value"><?php echo($managerEmail) ?></span>
+                                <span class="value"><a href=<?php echo("\"mailto:" . $managerEmail . "\"") ?>><?php echo($managerEmail) ?></a></span>
                             </li>
                             <li>
-                                <span class="label">Attendees</span>
-                                <span class="value"><?php echo($attendeeCount) ?></span>
+                                <span class="label">CodeDay Helpline</span>
+                                <span class="value">+1 (888) CODE-230</span>
                             </li>
-                            <?php
-                        if($waiverLink!=null) {
-                        echo("<li>
-                                <span class=\"label\">Waiver</span>
-                                <span class=\"value\"><a href=" . $waiverLink . ">Here (urgent!)</a></span>
-                            </li>");
-                        }
-                        ?>
                         </ul>
                     </section>
                     <!--

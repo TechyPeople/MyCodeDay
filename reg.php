@@ -17,7 +17,7 @@
     include('eventscraper.php');
     
     if(!isset($userID)) {
-        header('Location: index.php?selectedEvent=' . $myEvent . "&userID=none");
+        header('Location: reg.php?selectedEvent=' . $myEvent . "&userID=none");
     } elseif($userID == "none") {
         $emailIsPresent = false;
     } else {
@@ -84,9 +84,9 @@
 
                 <section class="general">
                     <ul>
-                        <li><a href="#">Overview</a>
+                        <li><a href=<?php echo( "index.php?userID=" . $userID) ?>>Overview</a>
                         </li>
-                        <li><a href=<?php echo( "reg.php?userID=" . $userID) ?>>My Registration</a>
+                        <li><a href="#">My Registration</a>
                         </li>
                     </ul>
                 </section>
@@ -96,7 +96,7 @@
                     <ul>
                         <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
                         </li>
-                        <li><a href="sponsors.php">Sponsors</a>
+                        <li><a href="#">Sponsors</a>
                         </li>
                         <li><a href=<?php echo( "https://codeday.org/" . $myEvent . "#schedule") ?>>Schedule</a>
                         </li>
@@ -121,7 +121,8 @@
         <li><a href="/event/Z3ftTdfVLFzi/shipping">CTF</a>
         </li>
     </ul>
-</section>-->
+</section>
+-->
 
             </section>
             <section class="content with-subnav">
@@ -129,28 +130,32 @@
                     <section class="hud">
                         <ul>
                             <li>
-                                <span class="label">Event</span>
-                                <span class="value"><?php echo($eventName) ?></span>
+                                <span class="label">Registrant</span>
+                                <span class="value"><?php echo($userName) ?></span>
                             </li>
                             <li>
-                                <span class="label">Venue</span>
-                                <span class="value"><a href=<?php echo($venueLink) ?>><?php echo($venueName) ?></a></span>
+                                <span class="label">Parent</span>
+                                <span class="value"><?php echo($userParentName) ?></span>
                             </li>
                             <li>
-                                <span class="label">Date</span>
-                                <span class="value"><?php echo($startDate . " to " . $endDate) ?></span>
+                                <span class="label">Parent Phone Numbers</span>
+                                <span class="value"><?php echo($userParentPhone . ", " . $userParentSecondaryPhone) ?></span>
                             </li>
                             <li>
-                                <span class="label">Attendees</span>
-                                <span class="value"><?php echo($attendeeCount) ?></span>
+                                <span class="label">Amount Paid</span>
+                                <span class="value"><?php echo($amountPaid) ?></span>
+                            </li>
+                            <li>
+                                <span class="label">Checked in?</span>
+                                <span class="value"><?php if ($checkedIn != true) { echo("Nope."); } else { echo("Yup! Checked in on " . $checkInTime); } ?></span>
                             </li>
                             <?php
-                        if($waiverLink!=null) {
-                        echo("<li>
-                                <span class=\"label\">Waiver</span>
-                                <span class=\"value\"><a href=" . $waiverLink . ">Here (urgent!)</a></span>
-                            </li>");
-                        }
+                        if ($waiverLink != null) {
+                            echo("<li>
+                                    <span class=\"label\">Waiver</span>
+                                    <span class=\"value\"><a href=" . $waiverLink . ">Here (urgent!)</a></span>
+                                </li>");
+                            }
                         ?>
                         </ul>
                     </section>
