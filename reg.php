@@ -96,7 +96,7 @@
                     <ul>
                         <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
                         </li>
-                        <li><a href="#">Sponsors</a>
+                        <li><a href=<?php echo( "sponsors.php?userID=" . $userID) ?>>Sponsors</a>
                         </li>
                         <li><a href=<?php echo( "https://codeday.org/" . $myEvent . "#schedule") ?>>Schedule</a>
                         </li>
