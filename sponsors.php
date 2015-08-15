@@ -86,7 +86,7 @@
                     <ul>
                         <li><a href=<?php echo( "index.php?userID=" . $userID) ?>>Overview</a>
                         </li>
-                        <li><a href="#">My Registration</a>
+                        <li><a href=<?php echo( "reg.php?userID=" . $userID) ?>>My Registration</a>
                         </li>
                     </ul>
                 </section>
@@ -96,7 +96,7 @@
                     <ul>
                         <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
                         </li>
-                        <li><a href="sponsors.php">Sponsors</a>
+                        <li><a href="#">Sponsors</a>
                         </li>
                     </ul>
                 </section>
