@@ -26,7 +26,7 @@
                 <h1>Welcome to MyCodeDay</h1>
                 <form class="form" action="index.php" method="get">
                     <!--                <input type="text" placeholder="Type your event ID..." name="myEvent">-->
-                    <input type="text" placeholder="Type your registration ID..." name="userID">
+                    <input type="text" placeholder="Type your registration ID..." name="id">
                     <button type="submit" id="login-button">Enter</button>
                     <p>
                         <br/>You can find your registration ID at the bottom of the confirmation email we sent you when you registered.</p>
