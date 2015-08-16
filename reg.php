@@ -84,7 +84,7 @@
 
                 <section class="general">
                     <ul>
-                        <li><a href=<?php echo( "index.php?userID=" . $userID) ?>>Overview</a>
+                        <li><a href=<?php echo( "index.php?id=" . $userID) ?>>Overview</a>
                         </li>
                         <li><a href="#">My Registration</a>
                         </li>
@@ -94,9 +94,9 @@
                 <section class="info">
                     <h3>Event Information</h3>
                     <ul>
-                        <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
+                        <li><a href=<?php echo( "staff.php?id=" . $userID) ?>>Staff</a>
                         </li>
-                        <li><a href=<?php echo( "sponsors.php?userID=" . $userID) ?>>Sponsors</a>
+                        <li><a href=<?php echo( "sponsors.php?id=" . $userID) ?>>Sponsors</a>
                         </li>
                         <li><a href=<?php echo( "https://codeday.org/" . $myEvent . "#schedule") ?>>Schedule</a>
                         </li>

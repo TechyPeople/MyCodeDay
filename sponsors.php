@@ -84,9 +84,9 @@
 
                 <section class="general">
                     <ul>
-                        <li><a href=<?php echo( "index.php?userID=" . $userID) ?>>Overview</a>
+                        <li><a href=<?php echo( "index.php?id=" . $userID) ?>>Overview</a>
                         </li>
-                        <li><a href=<?php echo( "reg.php?userID=" . $userID) ?>>My Registration</a>
+                        <li><a href=<?php echo( "reg.php?id=" . $userID) ?>>My Registration</a>
                         </li>
                     </ul>
                 </section>
@@ -94,7 +94,7 @@
                 <section class="info">
                     <h3>Event Information</h3>
                     <ul>
-                        <li><a href=<?php echo( "staff.php?userID=" . $userID) ?>>Staff</a>
+                        <li><a href=<?php echo( "staff.php?id=" . $userID) ?>>Staff</a>
                         </li>
                         <li><a href="#">Sponsors</a>
                         </li>
