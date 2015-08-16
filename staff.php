@@ -1,6 +1,5 @@
 <?php
-    $myEvent = $_REQUEST["myEvent"];
-    $userID = $_REQUEST["userID"];
+    $userID = $_REQUEST["id"];
     
     include('simple_html_dom.php');
     include('events.php');
@@ -11,7 +10,7 @@
         $selectedEvent = $userEvent;
     }
 
-    $eventID = $selectedEvent['current_event']['id'];
+//    $eventID = $selectedEvent['current_event']['id'];
 
     include('eventscraper.php');
     

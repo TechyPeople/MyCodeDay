@@ -1,6 +1,6 @@
 <?php
 //    $myEvent = $_REQUEST["myEvent"];
-    $userID = $_REQUEST["userID"];
+    $userID = $_REQUEST["id"];
     
     include('regscraper.php');
     include('simple_html_dom.php');

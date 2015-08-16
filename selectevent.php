@@ -1,7 +1,7 @@
 <?php
     $userID = $_REQUEST['id'];
     if ($userID != null) {
-        header('Location: index.php?id=' . $userID);
+        header('Location: index.php?ID=' . $userID);
     }
 ?>
 
