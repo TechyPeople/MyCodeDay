@@ -1,7 +1,7 @@
 <?php
     $userID = $_REQUEST['id'];
     if ($userID != null) {
-        header('Location: index.php?ID=' . $userID);
+        header('Location: index.php?id=' . $userID);
     }
 ?>
 
@@ -26,7 +26,7 @@
                 <h1>Welcome to MyCodeDay</h1>
                 <form class="form" action="index.php" method="get">
                     <!--                <input type="text" placeholder="Type your event ID..." name="myEvent">-->
-                    <input type="text" placeholder="Type your registration ID..." name="id">
+                    <input type="text" placeholder="Enter your registration ID..." name="id" id="id">
                     <button type="submit" id="login-button">Enter</button>
                     <p>
                         <br/>You can find your registration ID at the bottom of the confirmation email we sent you when you registered.</p>
@@ -42,6 +42,16 @@
 
             </script>
             <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
                 <li></li>
                 <li></li>
                 <li></li>

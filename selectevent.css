@@ -94,6 +94,10 @@ form {
     position: relative;
     z-index: 2;
 }
+form p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 form input {
     appearance: none;
     outline: 0;
